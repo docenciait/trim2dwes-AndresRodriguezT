@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+  <form method="POST">
+    {% csrf_token %}
+    {{template_data.form.as_p}}
+    <button type="submit"> Registrarse </button>
+  </form>
+  <p> ¿Ya tienes cuenta? <a class="nav-link"
+    href="{% url 'usuarios.login' %}">
+    inicia sesión
+    </a>
+</p>
+{% endblock content %}

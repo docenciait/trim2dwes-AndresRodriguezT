@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+</form>
+<p> ¿No tienes cuenta? <a class="nav-link"
+    href="{% url 'usuarios.signup' %}">
+    Registrate
+    </a>
+</p>
+{% endblock %}
